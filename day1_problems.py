@@ -54,7 +54,7 @@ a=10
 b=12
 print(a+b)
 
-#Addition code
+#Addition code in c
 
 '''
 int num1=12
@@ -63,3 +63,42 @@ int sum=num1+num2
 printf("%d,sum)
 
 '''
+
+# 9. Input a string and print it in upper, lower, and title case.
+
+name=input("Please enter your name : ")
+print(name.upper())
+print(name.lower())
+print(name.title())
+
+# 11. Read two numbers and display their product with formatted output.
+
+numm1=int(input("Enter the value of numm1 : "))
+numm2=int(input("Enter the value of numm2 : "))
+
+print(f"The Product of two numbers {numm1} * {numm2} = {numm1*numm2}")
+
+#  Write a script with incorrect indentation, correct it, and explain the error.
+
+voter_age=19
+
+# if voter_age<18:
+# print("Identation error")
+
+if voter_age<18:
+    print("Sorry you can't caste your vote")
+else:
+    print("Caste your vote")
+
+#  Demonstrate different print formats using %, .format(), and f-strings.
+
+
+name = "Sumit Shukla"
+
+age= 22
+
+print("Student: %s, Age: %d" % (name, age))
+
+print("Student: {}, Age: {}".format(name, age))
+
+print(f"Student: {name}, Age: {age}")
