@@ -193,3 +193,95 @@ def flatten_2d_list(two_d_list):
 # Example usage
 two_d_list = [[1, 2, 3], [4, 5], [6, 7]]        
 print(flatten_2d_list(two_d_list))
+
+# Write a Python code to count the frequency of words in a sentence using a dictionary.
+
+
+# Explain the role of `super()` with multiple inheritance. Provide code.
+
+print(f"The super keword is used to use all the functiins and methods of the parent class into the subclasss or the child class.Suped is a reserved keyword and can be used in child class to access the methods ")
+
+# What are inner classes? Show a use case where they make sense.
+print(f"Inner classes are classes defined within another class. They are used to logically group classes that are only used in one place, which helps in keeping the code organized and encapsulated.")
+class OuterClass:
+    class InnerClass:
+        def inner_method(self):
+            return "This is an inner class method."
+    
+    def outer_method(self):
+        inner_instance = self.InnerClass()
+        return inner_instance.inner_method()    
+    
+outer_instance = OuterClass()
+print(outer_instance.outer_method())
+
+
+# Write an efficient algorithm to find the second largest element in a list without sorting
+def second_largest(numbers):
+    if len(numbers) < 2:
+        return None
+    first, second = float('-inf'), float('-inf')
+    for number in numbers:
+        if number > first:
+            second = first
+            first = number
+        elif first > number > second:
+            second = number
+    return second if second != float('-inf') else None
+
+numbers = [3, 1, 4, 4, 5, 2]
+print(second_largest(numbers))  
+
+# Write a Python code to count the frequency of words in a sentence using a dictionary.
+def word_frequency(sentence):
+    words = sentence.split()
+    frequency = {}
+    for word in words:
+        word = word.lower()  # Normalize to lowercase
+        frequency[word] = frequency.get(word, 0) + 1
+    return frequency
+sentence = "We are here at Bennett UNiversity and leanrning pyhton with our mentor Mr. Sumit kumar roy and Mr. Shivashish Sir"
+print(word_frequency(sentence))
+
+# Given two lists, return the elements common to both using list comprehension and sets.
+
+def common_elements(l1, l2):
+    return [element for element in set(l1) if element in set(l2)] 
+l1 = [1, 2, 3, 4, 5]
+l2 = [4, 5, 6, 7, 8] 
+print(common_elements(l1, l2))
+
+# What is the difference between `del`, `pop()`, and `remove()` in lists?
+
+print(f"`del`, `pop()`, and `remove()` are all methods used to remove elements from a list, but they work differently:")
+
+print(f"The `del` statement removes an item at a specific index or the entire list, `pop()` removes and returns an item at a specific index (default is the last item), and `remove()` removes the first occurrence of a specified value from the list.")
+
+# Write a code to reverse only the vowels in a string.
+def reverse_vowels(s):
+    vowels = 'aeiouAEIOU'
+    s_list = list(s)
+    left, right = 0, len(s_list) - 1
+    
+    while left < right:
+        if s_list[left] not in vowels:
+            left += 1
+        elif s_list[right] not in vowels:
+            right -= 1
+        else:
+            s_list[left], s_list[right] = s_list[right], s_list[left]
+            left += 1
+            right -= 1
+            
+    return ''.join(s_list)
+
+s = "hello world"
+print(reverse_vowels(s))
+
+# How do you check if a list contains all unique elements? Write efficient code
+
+def has_unique_elements(lst):
+    return len(lst) == len(set(lst))    
+lst = [1, 2, 3, 4, 5]
+print(has_unique_elements(lst))
+
