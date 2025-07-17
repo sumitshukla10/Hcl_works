@@ -76,3 +76,102 @@ match operation:
         print(num1//num2)
     case _:
         print("Kindly choose a valid operation")
+
+# Write a pattern printing program using nested loops for this pattern:
+#*
+#**
+#***
+#****
+for i in range(1, 5):
+    for j in range(i):
+        print("*", end="")
+    print()
+
+# Explain how the `assert` statement works. How is it different from `raise`?
+print("\nThe `assert` statement is used for debugging purposes. It tests a condition and raises an AssertionError if the condition is false. It is typically used to catch bugs during development.")
+print("The `raise` statement is used to explicitly raise an exception, which can be caught and handled by the program. It is used to signal that an error has occurred.")
+
+# Explain pass-by-object-reference with this example
+def modify_list(lst):
+    lst.append(100)
+l=[10,20]
+modify_list(l)
+print(l)
+
+print(f"In pass by refernce the refeerence of the original memmory is passed and chnages can be seen if any made to the original object")
+    
+
+# Write a function that returns the sum of even-indexed Fibonacci numbers up to N.
+def fibonacci_sum_even_index(n):
+    a, b = 0, 1
+    total = 0
+    index = 0
+    while a <= n:
+        if index % 2 == 0:
+            total += a
+        a, b = b, a + b
+        index += 1
+    return total
+print(fibonacci_sum_even_index(10))
+
+# What is the output? Explain.
+print(f"As we know that fibonacci series is a series of numbers where each number is the sum of its previous two numbers")
+
+# What is the output? Explai
+def foo(a,b=[]):
+    b.append(a)
+    return b
+print(foo(1))
+print(foo(2))
+
+print(f"the output of above code is [1] and [1,2] because we know that the list is mutable and retains its state between functions call so the second call will append the 2 in the existing list of [1]")
+
+# How would you return multiple values from a function? Show three ways.
+def return_multiple_values():
+    return 10,12,12
+def return_multiple_values_list():
+    return [100,200,300]        
+def return_multiple_values_dict():
+    return {'a': "Sumit", 'b': "bibash", 'c': "Aditya"}
+
+def factorial(num):
+    if num==0 or num==1:
+        return 1
+    else:
+        return num * factorial(num - 1)
+
+print(F"tHE FACTORIAL  of  given number is {factorial(5)}")
+
+
+# Use map and filter together to find square of all even numbers from a list.
+def square_even_numbers(numbers):
+    return list(map(lambda x: x**2, filter(lambda x: x % 2 == 0, numbers)))
+
+
+# numbers=[1,2,3,4,5,6,7,8,9,10]
+num=int(input("enter the number of nums :"))
+numbers=[]
+for i in range(num):
+    n=int(input("Enter the value of n : "))
+    numbers.append(n)
+print(numbers)
+print(square_even_numbers(numbers) )
+
+#What is the diff betwwen args and kwargs
+
+print("Args are used to specify that a functions can accept any number of arguments while kwargs are used to pass keyword arguments to a function. Args are passed as a tuple while kwargs are passed as a dictionary.")
+
+#args and kwargs 
+
+def example_function(*args, **kwargs):
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+example_function(10,20,30, name="sumit shukla", age=22)
+
+def addition_of_number(*args):
+    sum=0
+    for i in args:
+        sum+=i
+    return sum
+
+print(f"sum of given numbers are {addition_of_number(1,2,3,4,5,56)}")
