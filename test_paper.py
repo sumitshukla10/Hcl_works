@@ -285,3 +285,44 @@ def has_unique_elements(lst):
 lst = [1, 2, 3, 4, 5]
 print(has_unique_elements(lst))
 
+# Write a function to check if two strings are anagrams.
+
+def are_anagrams(str1, str2):
+    return sorted(str1) == sorted(str2) 
+
+str1 = "listen"
+str2 = "silent"
+print(are_anagrams(str1, str2))
+
+
+# Explain how tuple immutability is bypassed using object references.
+
+print(f"Tuple immutability can be bypassed by using mutable objects like lists or dictionaries as elements within a tuple. While the tuple itself cannot be modified, the mutable objects it contains can be changed.")
+
+
+t = (1, [2, 3], 4)  
+t[1].append(5) 
+print(t)  
+
+
+# Write a program to remove all punctuation from a string.
+
+import string
+def remove_punctuation(s):  
+    return s.translate(str.maketrans('', '', string.punctuation))   
+s = "Hello, world! This is a test string with punctuation."
+print(remove_punctuation(s))
+
+# Given a list of integers, find the first pair whose sum is a target value using hashing.
+def find_pair_with_sum(nums, target):
+    seen = set()
+    for num in nums:
+        complement = target - num
+        if complement in seen:
+            return (complement, num)
+        seen.add(num)
+    return None
+nums = [10, 15, 3, 7]
+target = 17
+print(find_pair_with_sum(nums, target))
+
