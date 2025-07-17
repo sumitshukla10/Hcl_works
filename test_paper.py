@@ -326,3 +326,51 @@ nums = [10, 15, 3, 7]
 target = 17
 print(find_pair_with_sum(nums, target))
 
+
+# Explain data hiding and encapsulation using a real-world example
+
+print(f"Data hiding is a principle of encapsulation that restricts access to certain components of an object. It ensures that the internal representation of an object is hidden from the outside, allowing only controlled access through methods.")
+
+
+# Design a class `Employee` with instance and class variables. Add a method to track total employees.
+
+class Employee:
+    total_employees = 0  
+    
+    def __init__(self, name, position):
+        self.name = name 
+        self.position = position 
+        Employee.total_employees += 1  
+    @classmethod
+    def get_total_employees(cls):
+        return cls.total_employees  
+    
+# Example usage
+emp1 = Employee("Alice", "Developer")   
+emp2 = Employee("Bob", "Manager")
+print(f"Total employees: {Employee.get_total_employees()}")   
+
+# Write a Python program to read a text file and count the number of lines, words, and characters.
+
+def count_file_contents(file_path):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+        num_lines = len(lines)
+        num_words = sum(len(line.split()) for line in lines)
+        num_chars = sum(len(line) for line in lines)
+    return num_lines, num_words, num_chars      
+file_path = 'people.csv' 
+num_lines, num_words, num_chars = count_file_contents(file_path)
+print(f"Lines: {num_lines}, Words: {num_words}, Characters: {num_chars}")   
+
+# Given a CSV file, write a Python function using `csv` module to filter rows where age > 30.
+
+import csv
+def filter_age_above_30(file_path): 
+    with open(file_path, 'r') as file:
+        reader = csv.DictReader(file)
+        filtered_rows = [row for row in reader if int(row['age']) > 30]  
+    return filtered_rows
+file_path = 'people.csv'
+filtered_data = filter_age_above_30(file_path)  
+
