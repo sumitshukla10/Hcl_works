@@ -175,3 +175,21 @@ def addition_of_number(*args):
     return sum
 
 print(f"sum of given numbers are {addition_of_number(1,2,3,4,5,56)}")
+
+# Write a lambda function to sort a list of tuples based on the second element.
+def sorted_tuple_helper(tups):
+    return sorted(tups, key=lambda x: x[1])
+
+# Example usage
+tups = [(1, 3), (2, 1), (4, 2)]
+
+# Explain how Python handles default arguments. What's the danger with mutable types
+
+print(f"When default arguments is passed it is early evaluated by python and if mutuable type is used as a default argumnent then it may result into an unexpeted behaviour as default arguments is shared across all the functions call and program")
+
+# Write a list comprehension to flatten a 2D list
+def flatten_2d_list(two_d_list):
+    return [item for sublist in two_d_list for item in sublist]
+# Example usage
+two_d_list = [[1, 2, 3], [4, 5], [6, 7]]        
+print(flatten_2d_list(two_d_list))
